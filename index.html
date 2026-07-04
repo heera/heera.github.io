@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sheikh Heera — CTO at AuthLab, engineer &amp; open-source author</title>
+<meta name="description" content="Sheikh Heera — CTO at AuthLab. Software engineer and open-source author building developer tools, web platforms, and the open standards that connect them, across the full stack.">
+<meta name="author" content="Sheikh Heera">
+<meta property="og:title" content="Sheikh Heera">
+<meta property="og:description" content="CTO at AuthLab. I design and ship developer tools, web platforms, and open standards — across the full stack.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://heera.github.io/">
+<meta name="theme-color" content="#0e1412">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e1412'/%3E%3Cpath d='M11 9v14M21 9v14M11 16h10' stroke='%236ec7b6' stroke-width='2.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1412;
+    --surface: #141d1a;
+    --surface-2: #18221e;
+    --ink: #e9efec;
+    --ink-soft: #97a6a0;
+    --ink-dim: #6c7c76;
+    --accent: #6ec7b6;
+    --accent-2: #8ad9c9;
+    --line: #212d29;
+    --line-2: #2c3b36;
+    --sans: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.62;
+    color: var(--ink);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(1100px 560px at 78% -12%, rgba(110, 199, 182, 0.11), transparent 60%),
+      radial-gradient(820px 520px at -10% 108%, rgba(110, 199, 182, 0.055), transparent 58%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-2); }
+  ::selection { background: rgba(110, 199, 182, 0.24); color: #fff; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: clamp(3.25rem, 9vw, 6.5rem) 1.5rem 4rem; }
+
+  /* ---- Hero ---- */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.15rem;
+  }
+  h1 {
+    margin: 0 0 1.15rem;
+    font-size: clamp(2.7rem, 9vw, 4.4rem);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+  }
+  .lead {
+    margin: 0 0 1.9rem;
+    max-width: 33em;
+    font-size: clamp(1.06rem, 2.4vw, 1.24rem);
+    color: var(--ink-soft);
+  }
+  .lead a { color: var(--ink); border-bottom: 1px solid rgba(110, 199, 182, 0.5); padding-bottom: 1px; }
+  .lead a:hover { border-color: var(--accent); }
+
+  /* ---- Connect ---- */
+  .connect { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .connect a {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    border: 1px solid var(--line-2);
+    border-radius: 999px;
+    padding: 0.42rem 0.92rem;
+    transition: color .16s ease, border-color .16s ease, background-color .16s ease;
+  }
+  .connect a:hover { color: var(--ink); border-color: var(--accent); background: rgba(110, 199, 182, 0.09); }
+
+  /* ---- Section ---- */
+  .section { margin-top: clamp(3rem, 8vw, 4.5rem); }
+  .section__label {
+    display: flex; align-items: center; gap: 0.9rem;
+    margin: 0 0 1.15rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 500;
+  }
+  .section__label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  /* ---- Project cards ---- */
+  .cards { display: grid; gap: 0.85rem; }
+  .card {
+    display: block;
+    padding: 1.25rem 1.35rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: inherit;
+    transition: border-color .18s ease, transform .18s ease, background-color .18s ease;
+  }
+  .card:hover { border-color: var(--line-2); background: var(--surface-2); transform: translateY(-2px); }
+  .card__top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .card__name { font-size: 1.13rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); }
+  .card__slug { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-dim); white-space: nowrap; }
+  .card__desc { margin: 0.45rem 0 0; font-size: 0.98rem; color: var(--ink-soft); }
+  .card__go { color: var(--accent); white-space: nowrap; }
+  .card:hover .card__go { color: var(--accent-2); }
+  .card .mono { font-family: var(--mono); font-size: 0.86em; color: var(--ink); }
+
+  /* ---- Footer ---- */
+  footer {
+    margin-top: clamp(3.5rem, 9vw, 5rem);
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+  }
+  footer a { color: var(--ink-soft); }
+  footer a:hover { color: var(--accent); }
+
+  a:focus-visible, .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+  @media (prefers-reduced-motion: reduce) { *, ::before, ::after { transition: none !important; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Software engineer · Open-source author</p>
+    <h1>Sheikh Heera</h1>
+    <p class="lead">
+      CTO at <a href="https://authlab.io" rel="me">AuthLab</a>. I design and ship developer tools, web
+      platforms, and the open standards that connect them — across the full stack.
+    </p>
+    <nav class="connect" aria-label="Profiles and links">
+      <a href="https://heera.it" rel="me">heera.it</a>
+      <a href="https://github.com/heera" rel="me">GitHub</a>
+      <a href="https://www.linkedin.com/in/sheikh-heera/" rel="me">LinkedIn</a>
+      <a href="https://stackoverflow.com/users/741747/the-alpha" rel="me">Stack Overflow</a>
+      <a href="https://x.com/heerasheikh" rel="me">X</a>
+      <a href="https://facebook.com/sheikh.heera" rel="me">Facebook</a>
+    </nav>
+
+    <section class="section" aria-labelledby="projects-label">
+      <h2 class="section__label" id="projects-label">Projects</h2>
+      <div class="cards">
+        <a class="card" href="https://heera.github.io/agentimus/">
+          <span class="card__top">
+            <span class="card__name">Agentimus</span>
+            <span class="card__slug">/agentimus</span>
+          </span>
+          <p class="card__desc">An AI-discovery layer for WordPress — <span class="mono">llms.txt</span>, structured data, and discovery documents that make a site legible to AI assistants and agents. <span class="card__go">Read the docs →</span></p>
+        </a>
+
+        <a class="card" href="https://heera.github.io/wp-discovery-protocol/">
+          <span class="card__top">
+            <span class="card__name">WP_Discovery Protocol</span>
+            <span class="card__slug">/wp-discovery-protocol</span>
+          </span>
+          <p class="card__desc">An open, vendor-neutral agent-readiness standard: one <span class="mono">/.well-known/discovery.json</span> that tells AI what a site is and how to work with it. <span class="card__go">Read the spec →</span></p>
+        </a>
+
+        <a class="card" href="https://heera.github.io/iconfig/">
+          <span class="card__top">
+            <span class="card__name">Iconfig</span>
+            <span class="card__slug">/iconfig</span>
+          </span>
+          <p class="card__desc">An instant, zero-friction configuration manager for PHP. <span class="card__go">View project →</span></p>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Sheikh Heera</span>
+      <span><a href="https://heera.it">heera.it</a> · <a href="https://authlab.io">authlab.io</a></span>
+    </footer>
+  </main>
+</body>
+</html>
